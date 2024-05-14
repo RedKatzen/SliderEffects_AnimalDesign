@@ -43,7 +43,7 @@ function mostrarSlider(tipo){
     }, tempoRodado)
 
     clearTimeout(rodarProxAuto);
-    let rodarProxAuto = setTimeout(() => {
+    rodarProxAuto = setTimeout(() => {
         next.click();
     }, tempoAuto);
 }
