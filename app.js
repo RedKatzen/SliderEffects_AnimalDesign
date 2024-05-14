@@ -13,13 +13,13 @@ prevDom.onclick = function() {
     mostrarSlider('prev');
 }
 
-let timeRunning = 3000;
-let timeAutoNext = 5000;
+let tempoRodado = 3000;
+let tempoAuto = 7000;
 
-let runTimeOut;
-let runNextAuto = setTimeout(() => {
+let tempoLimite;
+let rodarProxAuto = setTimeout(() => {
     next.click();
-}, timeAutoNext);
+}, tempoAuto);
 
 function mostrarSlider(tipo){
     let itemSlider = document.querySelectorAll('.carrosel .lista .item');
@@ -36,14 +36,14 @@ function mostrarSlider(tipo){
         carroselDom.classList.add('prev');
     }
 
-    clearTimeout(runTimeOut);
-    runTimeOut = setTimeout(() => {
-        carouselDom.classList.remove('next');
-        carouselDom.classList.remove('prev');
-    }, timeRunning);
+    clearTimeout(tempoLimite);
+    tempoLimite = setTimeout(() => {
+        carroselDom.classList.remove('next');
+        carroselDom.classList.remove('prev');
+    }, tempoRodado)
 
-    clearTimeout(runNextAuto);
-    runNextAuto = setTimeout(() => {
+    clearTimeout(rodarProxAuto);
+    let rodarProxAuto = setTimeout(() => {
         next.click();
-    }, timeAutoNext)
+    }, tempoAuto);
 }
